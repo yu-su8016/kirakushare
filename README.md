@@ -6,9 +6,9 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
--  has_many :likes
-has_many :comments
-has_many :scene
+- has_many :likes
+- has_many :comments
+- has_many :scene
 
 ## sceneテーブル
 |Column|Type|Options|
@@ -19,9 +19,9 @@ has_many :scene
 |date|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
--  belongs_to :user
-has_many :comments
-has_many :likes
+- belongs_to :user
+- has_many :comments
+- has_many :likes
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -31,8 +31,8 @@ has_many :likes
 |scene_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :tweet
-belongs_to :user
-has_many :likes
+- belongs_to :user
+- has_many :likes
 
 ## likeテーブル
 |Column|Type|Options|
@@ -40,7 +40,7 @@ has_many :likes
 |user_id|integer|null: false, foreign_key: true|
 |scene_id|integer|null: false, foreign_key: true|
 ### Association
--  belongs_to :comment
-belongs_to :user
-belongs_to :scene
+- belongs_to :comment
+- belongs_to :user
+- belongs_to :scene
 
