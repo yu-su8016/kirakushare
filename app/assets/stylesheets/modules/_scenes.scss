@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+}
+
+.header{
+  height: 50px;
+  width: 100%;
+  padding: 5px 20px 0 20px;
+  background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  position: fixed;
+  filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+  &__title{
+    font-size: 30px;
+    font-family: cursive;
+  }
+  &__right{
+    font-family: cursive;
+    width: 250px;
+    justify-content: space-between;
+    display: flex;
+    margin-right: 50px;
+    font-size: 18px;
+    padding-top: 5px;
+    &__regist a{
+      font-weight: bold;
+      text-decoration: none;
+      background: skyblue;
+      color:white;
+      padding:5px 10px;
+      border-radius: 20px;
+      font-family: 'Avenir','Arial';
+    }
+    &__login a{
+      font-weight: bold;
+      text-decoration: none;
+      background: skyblue;
+      color:white;
+      padding:5px 10px;
+      border-radius: 20px;
+      font-family: 'Avenir','Arial';
+    }
+  }
+}
+a:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+
+.scene{
+  background-image: url("IMG_1035.jpeg");
+  background-attachment: fixed;
+  background-color:rgba(255,255,255,0.5);
+  background-blend-mode:lighten;
+  background-size: cover;
+  padding-top: 80px;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  &__lists{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    &__list{
+      height: 310px;
+      width: 250px;
+      position: relative;
+      margin-right: 30px;
+      margin-bottom: 30px;
+      filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+      &__img{
+        background-color: whitesmoke;
+        height: 250px;
+        width: 250px;
+        border: double 5px #4ec4d3;
+      }
+      &__info{
+        background-color: whitesmoke;
+        width: 250px;
+        position: absolute;
+        border: double 5px black;
+        &__area{
+          font-size: 12px;
+        }
+        &__date{
+          font-size: 8px;
+          padding: 5px 0 5px 0;
+        }
+        &__like{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  &__icon a{
+    background-color: black;
+    height: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 40px;
+    color: white;
+    border: 1px solid;
+    border-radius: 10px;
+  }
+}
+
+
+.footer{
+  background-color: black;
+  width: 100%;
+  height: 30px;
+  font-size: 5px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+
+
