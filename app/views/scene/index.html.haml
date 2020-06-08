@@ -3,66 +3,35 @@
     .header__title
       Kiraku Share
     .header__right
-      .header__right__regist
-        = link_to "新規登録", "#"
-      .header__right__login
-        = link_to "ログイン", "#" 
+      - if user_signed_in? && current_user.id
+        .header__right__regist
+          = current_user.name
+          memory
+        .header__right__login
+          = link_to "ログアウト", "#"
+      - else
+        .header__right__regist
+          = link_to "新規登録", "#"
+        .header__right__login
+          = link_to "ログイン", "#"
   .scene
     .scene__lists
-      .scene__lists__list
-        .scene__lists__list__img
-          image1
-        .scene__lists__list__info
-          .scene__lists__list__info__comment
-            楽しかった
-          .scene__lists__list__info__area
-            エリア：愛知県名古屋市
-          .scene__lists__list__info__date
-            日時：2020/5/5
-          .scene__lists__list__info__like
-            ♡いいね：3
-
-      .scene__lists__list
-        .scene__lists__list__img
-          image1
-        .scene__lists__list__info
-          .scene__lists__list__info__comment
-            楽しかった
-          .scene__lists__list__info__area
-            エリア：愛知県名古屋市
-          .scene__lists__list__info__date
-            日時：2020/5/5
-          .scene__lists__list__info__like
-            ♡いいね：3
-
-      .scene__lists__list
-        .scene__lists__list__img
-          image1
-        .scene__lists__list__info
-          .scene__lists__list__info__comment
-            楽しかった
-          .scene__lists__list__info__area
-            エリア：愛知県名古屋市
-          .scene__lists__list__info__date
-            日時：2020/5/5
-          .scene__lists__list__info__like
-            ♡いいね：3
-
-      .scene__lists__list
-        .scene__lists__list__img
-          image1
-        .scene__lists__list__info
-          .scene__lists__list__info__comment
-            楽しかった
-          .scene__lists__list__info__area
-            エリア：愛知県名古屋市
-          .scene__lists__list__info__date
-            日時：2020/5/5
-          .scene__lists__list__info__like
-            ♡いいね：3
+      - @scene.each do |scene|
+        .scene__lists__list
+          .scene__lists__list__img
+            = scene.image
+          .scene__lists__list__info
+            .scene__lists__list__info__comment
+              = scene.text
+            .scene__lists__list__info__area
+              = scene.area
+            .scene__lists__list__info__date
+              = scene.date
+            .scene__lists__list__info__like
+              ♡いいね：3
 
     .scene__icon
-      = link_to root_path do
+      = link_to new_scene_path do
         %i.fas.fa-paper-plane{"aria-hidden": "true"}
   .footer
     kirakushare 2020
