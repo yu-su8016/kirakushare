@@ -24,20 +24,17 @@
   }
   &__right{
     font-family: cursive;
-    width: 250px;
+    width: 280px;
     justify-content: space-between;
     display: flex;
     margin-right: 50px;
     font-size: 18px;
     padding-top: 5px;
-    &__regist a{
+    &__regist{
       font-weight: bold;
-      text-decoration: none;
-      background: skyblue;
       color:white;
-      padding:5px 10px;
       border-radius: 20px;
-      font-family: 'Avenir','Arial';
+      color: blue;
     }
     &__login a{
       font-weight: bold;
@@ -47,6 +44,7 @@
       padding:5px 10px;
       border-radius: 20px;
       font-family: 'Avenir','Arial';
+      margin-top: 10px;
     }
   }
 }
@@ -80,10 +78,10 @@ a:hover {
       margin-bottom: 30px;
       filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
       &__img{
-        background-color: whitesmoke;
+        
         height: 250px;
         width: 250px;
-        border: double 5px #4ec4d3;
+        border: outset 10px #900;
       }
       &__info{
         background-color: whitesmoke;
@@ -105,7 +103,7 @@ a:hover {
     }
   }
   &__icon a{
-    background-color: black;
+    background-color: dodgerblue;
     height: 50px;
     position: fixed;
     bottom: 50px;

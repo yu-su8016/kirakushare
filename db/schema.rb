@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_06_05_091751) do
 
   create_table "scenes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "area", null: false
-    t.string "image", null: false
+    t.text "image", null: false
     t.string "text"
     t.string "date", null: false
     t.bigint "user_id"
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 2020_06_05_091751) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", default: "", null: false
     t.string "email", null: false
-    t.string "password", default: "", null: false
-    t.string "nickname", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
