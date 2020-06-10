@@ -4,6 +4,8 @@ class CreateLikes < ActiveRecord::Migration[5.2]
       t.references :scene
       t.references :user
       t.timestamps
+
+      
     end
   end
 end

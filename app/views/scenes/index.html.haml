@@ -28,7 +28,7 @@
               ♡いいね：3
             = link_to "編集", "/scenes/#{scene.id}/edit", class: 'henshu', method: :get
             = link_to "削除", "/scenes/#{scene.id}", class: 'sakujo',method: :delete 
-
+            = link_to '詳細', "/scenes/#{scene.id}", class: 'shousai',method: :get
     .scene__icon
       = link_to new_scene_path do
         %i.fas.fa-paper-plane{"aria-hidden": "true"}
