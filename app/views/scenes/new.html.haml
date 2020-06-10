@@ -1,0 +1,8 @@
+.container
+  投稿フォーム
+  = form_for [@scene] do |f|
+    = f.file_field :image, class: 'img', placeholder: "Image Url"
+    = f.text_field :text, class: 'text', placeholder: "コメント" , rows: "10"
+    = f.text_field :area, class: 'area', placeholder: "エリア" , rows: "10"
+    = f.text_field :date, class: 'date', placeholder: "例：2020/03/03" , rows: "10"
+    = f.submit "投稿する"

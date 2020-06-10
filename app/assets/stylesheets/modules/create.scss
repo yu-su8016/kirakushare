@@ -1,0 +1,14 @@
+.contentsrow{
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+
+  &__success{
+    padding: 50px;
+  }
+  &__submit a{
+    margin: 30px auto;
+    text-decoration: none;
+  
+  }
+}

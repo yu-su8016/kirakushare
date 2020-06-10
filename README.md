@@ -10,11 +10,11 @@
 - has_many :comments
 - has_many :scene
 
-## sceneテーブル
+## scenesテーブル
 |Column|Type|Options|
 |———|----|-------|
 |area|text|null: false|
-|image|text|null: false|
+|image|string|null: false|
 |text|text||
 |date|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
