@@ -1,0 +1,15 @@
+.contentsrow
+  .contentsrow__success
+    = image_tag @scene.image.url, class: 'image'
+  .contentsrow__submit
+    .contentsrow__submit__title
+      Title：
+      = @scene.text
+    .contentsrow__submit__area
+      Area：
+      = @scene.area
+    .contentsrow__submit__date
+      Season：
+      = @scene.date
+    = link_to "編集", "/scenes/#{@scene.id}/edit", class: 'henshu', method: :get
+    = link_to "削除", "/scenes/#{@scene.id}", class: 'sakujo',method: :delete 
