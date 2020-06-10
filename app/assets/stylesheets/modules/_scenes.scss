@@ -69,8 +69,8 @@ a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
     &__list{
+      text-align: center;
       height: 310px;
       width: 250px;
       position: relative;
@@ -78,7 +78,7 @@ a:hover {
       margin-bottom: 30px;
       filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
       &__img{
-        
+        background-size: cover;
         height: 250px;
         width: 250px;
         border: outset 10px #900;
@@ -114,7 +114,16 @@ a:hover {
     border-radius: 10px;
   }
 }
-
+.image{
+  height: 230px;
+  width: 230px;
+}
+.henshu{
+  text-decoration: none;
+}
+.sakujo{
+  text-decoration: none;
+}
 
 .footer{
   background-color: black;
