@@ -1,6 +1,6 @@
 class ScenesController < ApplicationController
   def index
-    @scenes = Scene.all
+    @scenes = Scene.all.order("created_at DESC")
   end
   def new
     @scene = Scene.new
@@ -8,6 +8,7 @@ class ScenesController < ApplicationController
 
   def create
     Scene.create!(scene_params)
+
   end
 
   def update
@@ -25,6 +26,8 @@ class ScenesController < ApplicationController
 
   def show
     @scene = Scene.find(params[:id])
+    @comment = Comment.new
+    @comments = @scene.comments.includes(:user)
   end
 
   private

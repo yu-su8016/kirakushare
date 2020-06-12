@@ -6,8 +6,8 @@
       - if user_signed_in? && current_user.id
         .header__right__regist
           = current_user.name
-        .header__right__login
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+        .header__right__logout
+          = link_to "ログアウト", destroy_user_session_path, class: 'logout', method: :delete
   .scene
     .scene__lists
       - @scenes.each do |scene|
@@ -24,13 +24,17 @@
             .scene__lists__list__info__date
               Season：
               = scene.date
-            .scene__lists__list__info__like
-              ♡いいね：3
-            = link_to "編集", "/scenes/#{scene.id}/edit", class: 'henshu', method: :get
-            = link_to "削除", "/scenes/#{scene.id}", class: 'sakujo',method: :delete 
-            = link_to '詳細', "/scenes/#{scene.id}", class: 'shousai',method: :get
+            .scene__lists__list__info__name
+              投稿者：
+              = scene.user.name
+            .scene__lists__list__info__user
+            - if user_signed_in? && current_user.id == scene.user_id
+              = link_to "編集", "/scenes/#{scene.id}/edit", class: 'btn', method: :get
+              = link_to "削除", "/scenes/#{scene.id}", class: 'btn',method: :delete 
+            = link_to '詳細', "/scenes/#{scene.id}", class: 'btn',method: :get
+            
     .scene__icon
-      = link_to new_scene_path do
+      = link_to new_scene_path, class: 'icon' do
         %i.fas.fa-paper-plane{"aria-hidden": "true"}
   .footer
     kirakushare 2020
