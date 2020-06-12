@@ -1,6 +1,6 @@
 .contentsrow
   .contentsrow__success
-    = image_tag @scene.image.url, class: 'image'
+    = image_tag @scene.image.url, class: 'photo'
   .contentsrow__submit
     .contentsrow__submit__title
       Title：
@@ -11,5 +11,28 @@
     .contentsrow__submit__date
       Season：
       = @scene.date
-    = link_to "編集", "/scenes/#{@scene.id}/edit", class: 'henshu', method: :get
-    = link_to "削除", "/scenes/#{@scene.id}", class: 'sakujo',method: :delete 
+    .contentsrow__submit__name
+      投稿者：
+      = @scene.user.name
+    = link_to "トップページへ戻る", root_path
+  .contentsrow__container
+    - if current_user
+      = form_for [@scene, @comment] do |f|
+        = f.text_field :text, class: 'contentsrow__container__comment', placeholder: "コメント" , rows: "10"
+        = f.submit "コメントを投稿", class: 'contentsrow__container__submit'
+  .contentsrow__lists
+    ＜コメント一覧＞
+    .contentsrow__lists__list
+      - if @comments 
+        - @comments.each do |comment|
+          .contentsrow__lists__list__name
+            = comment.user.name
+          .contentsrow__lists__list__text
+            = comment.text
+      - else
+        %p コメントなし
+
+  .contentsrow__user 
+    - if user_signed_in? && current_user.id == @scene.user_id
+      = link_to "編集", "/scenes/#{@scene.id}/edit", class: 'henshu', method: :get
+      = link_to "削除", "/scenes/#{@scene.id}", class: 'sakujo',method: :delete 

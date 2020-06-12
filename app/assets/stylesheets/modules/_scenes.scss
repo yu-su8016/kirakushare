@@ -36,7 +36,7 @@
       border-radius: 20px;
       color: blue;
     }
-    &__login a{
+    &__logout a{
       font-weight: bold;
       text-decoration: none;
       background: skyblue;
@@ -44,11 +44,11 @@
       padding:5px 10px;
       border-radius: 20px;
       font-family: 'Avenir','Arial';
-      margin-top: 10px;
+      margin-bottom: 10px;
     }
   }
 }
-a:hover {
+.logout:hover {
   opacity: 0.5;
   text-decoration: none;
 }
@@ -71,10 +71,10 @@ a:hover {
     flex-wrap: wrap;
     &__list{
       text-align: center;
-      height: 310px;
+      height: 450px;
       width: 250px;
       position: relative;
-      margin-right: 30px;
+      margin-right: 70px;
       margin-bottom: 30px;
       filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
       &__img{
@@ -85,10 +85,13 @@ a:hover {
       }
       &__info{
         background-color: whitesmoke;
+        height: 120px;
         width: 250px;
         position: absolute;
         border: double 5px black;
-        
+        &__text{
+          font-size: 15px;
+        }
         &__area{
           font-size: 12px;
         }
@@ -98,6 +101,9 @@ a:hover {
         }
         &__like{
           font-size: 10px;
+        }
+        &__user{
+          margin-top: 20px;
         }
       }
     }
@@ -114,18 +120,28 @@ a:hover {
     border-radius: 10px;
   }
 }
+.icon:hover{
+  opacity: 0.5;
+  text-decoration: none;
+}
 .image{
   height: 230px;
   width: 230px;
 }
-.henshu{
+.btn{
   text-decoration: none;
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  margin: 5px;
 }
-.sakujo{
-  text-decoration: none;
-}
-.shousai{
-  text-decoration: none;
+.btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
 }
 .footer{
   background-color: black;
