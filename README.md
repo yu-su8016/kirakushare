@@ -1,3 +1,12 @@
+# Name
+  Kirakushare
+# Overview
+  An exchange app with a photo posting function
+# Description
+  Log in and post your favorite photos
+  You can post a comment by opening the detail page
+
+
 # Pictweet DB設計
 ## usesrテーブル
 |Column|Type|Options|
