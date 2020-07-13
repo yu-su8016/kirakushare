@@ -1,13 +1,23 @@
-# Name
+# アプリ名
   Kirakushare
-# Overview
-  An exchange app with a photo posting function
-# Description
-  Log in and post your favorite photos
-  You can post a comment by opening the detail page
 
+# 概要
+  自分で撮った写真をアップして、交流できます。
 
-# Pictweet DB設計
+# 本番環境
+  デプロイ先：http://54.150.130.49:3000/
+  テストアカウント
+    Email：test@gmail.com
+    password：kakikukeko
+
+# 製作背景
+  ・写真を通して、交流をして欲しい。
+  ・写真を見て、ここに行ってみたい！と感じて欲しい。
+
+# DEMO
+https://i.gyazo.com/52672043f96e7becd466a726b44791b7.jpg
+
+# kirakushare DB設計
 ## usesrテーブル
 |Column|Type|Options|
 |------|----|-------|
