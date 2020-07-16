@@ -18,9 +18,14 @@
   z-index: 1;
   position: fixed;
   filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+  margin-top: 0;
   &__title{
     font-size: 30px;
     font-family: cursive;
+    .logo{
+      text-decoration: none;
+      color: white;
+    }
   }
   &__right{
     font-family: cursive;

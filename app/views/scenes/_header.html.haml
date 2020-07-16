@@ -1,0 +1,10 @@
+.header
+  .header__title
+    = link_to root_path, class: 'logo' do
+      Kiraku Share
+  .header__right
+    - if user_signed_in? && current_user.id
+      .header__right__regist
+        = current_user.name
+      .header__right__logout
+        = link_to "ログアウト", destroy_user_session_path, class: 'logout', method: :delete
