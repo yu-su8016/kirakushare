@@ -1,13 +1,7 @@
 .wrapper
-  .header
-    .header__title
-      Kiraku Share
-    .header__right
-      - if user_signed_in? && current_user.id
-        .header__right__regist
-          = current_user.name
-        .header__right__logout
-          = link_to "ログアウト", destroy_user_session_path, class: 'logout', method: :delete
+
+  = render "header"
+
   .scene
     .scene__lists
       - @scenes.each do |scene|
@@ -35,5 +29,5 @@
     .scene__icon
       = link_to new_scene_path do
         %i.fas.fa-paper-plane{"aria-hidden": "true"}
-  .footer
-    kirakushare 2020
+
+  = render "footer"
