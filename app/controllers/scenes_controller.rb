@@ -7,20 +7,26 @@ class ScenesController < ApplicationController
   end
 
   def create
-    Scene.create!(scene_params)
-  end
-
-  def update
-    @scene = Scene.find(params[:id])
+    @scene = Scene.new(scene_params)
+    if @scene.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
     @scene = Scene.find(params[:id])
+    
   end
 
   def update
     scene = Scene.find(params[:id])
-    scene.update(scene_params)
+    if @scene.update(scene_params)
+      redirect_to root_path
+    else
+      render :update
+    end
   end
 
   def show

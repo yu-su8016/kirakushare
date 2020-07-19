@@ -1,0 +1,6 @@
+- if @scene.errors.any?
+  .alert
+    %ul
+      - @scene.errors.full_messages_for(culumn).each do |message|
+        %li
+          = message
