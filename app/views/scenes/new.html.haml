@@ -4,21 +4,28 @@
   投稿フォーム
   .container__preview
     %p プレビュー
+    = render "error_form", culumn: :image
     = image_tag @scene.image.to_s, id: 'img'
   .container__new
     = form_for [@scene] do |f|
-      -# = f.label :image, class: 'form' do
-      -#   = icon('fas', 'camera-retro', class: 'camera')
+      %span.required 必須
       = f.file_field :image, class: 'file', id: 'image_file'
+      
+      = render "error_form", culumn: :text    
       .feel
         %p.word 感想
-        = f.text_field :text, class: 'feel__text', placeholder: "例：キレイ" , rows: "10"
+        %span.required 必須
+        = f.text_field :text, class: 'feel__text', placeholder: "例：キレイ" 
+
+      = render "error_form", culumn: :area
       .go
-        %p.word 地域or観光地
-        = f.text_field :area, class: 'go__area', placeholder: "例：愛知県名古屋市" , rows: "10"
+        %p.word 地域
+        %span.required 必須
+        = f.text_field :area, class: 'go__area', placeholder: "例：愛知県名古屋市" 
+
       .season
-        %p.word 日付or時期
-        = f.text_field :date, class: 'season__date', placeholder: "例：3月" , rows: "10"
+        %p.word 時期
+        = f.text_field :date, class: 'season__date', placeholder: "例：3月" 
       = f.submit "投稿する", class:'submit'
 
 = render "footer"

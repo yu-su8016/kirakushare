@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        encrypted_password: パスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+      scene:
+        image: 写真
+        text: 感想
+        area: 地域
