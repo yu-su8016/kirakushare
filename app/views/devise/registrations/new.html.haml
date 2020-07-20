@@ -4,6 +4,11 @@
       %h2 Create Account
       %h5 新規アカウントの作成
       = render "devise/shared/links"
+      
+      .google
+        = icon("fab", "google", class: 'google--icon')
+        = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post,class: 'google--link'
+
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         
