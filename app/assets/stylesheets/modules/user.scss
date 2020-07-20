@@ -7,7 +7,29 @@
     border: 1px solid #ddd;
     border-radius: 5px;
 
-    .account-page__inner--left, .account-page__inner--right {
+    .account-page__inner--left{
+      float: left;
+      width: 50%;
+      display: block;
+      .google{
+        background-color: #db4a39;
+        color: white;
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+        height: 40px;
+        text-align: center;
+        margin: 10px 0 10px;
+        &--icon{
+          font-size: 1em;
+        }
+        &--link{
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+    .account-page__inner--right {
       float: left;
       width: 50%;
     }
