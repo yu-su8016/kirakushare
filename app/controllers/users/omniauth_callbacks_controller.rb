@@ -4,6 +4,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
+  def facebook
+    callback_for(:facebook)
+  end
+  
   def google_oauth2
     callback_for(:google)
   end

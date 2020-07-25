@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable,  :validatable,
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
-
   has_many :likes
   has_many :comments
   has_many :scenes
   has_many :sns_credentials, dependent: :destroy
+
+  devise :database_authenticatable, :registerable,
+  :recoverable, :rememberable,  :validatable,
+  :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
   domein = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with:  domein }, uniqueness: true
