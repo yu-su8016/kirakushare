@@ -2,10 +2,10 @@
   Kirakushare
 
 # 概要
-  自分で撮った写真をアップして、交流できます。
+  自分で撮った写真をアップして、興味を持った方と交流できます。
 
 # 本番環境
-  デプロイ先：http://54.150.130.49:3000/
+  デプロイ先：https://kirakushare.herokuapp.com
   テストアカウント
     Email：test@gmail.com
     password：kakikukeko
