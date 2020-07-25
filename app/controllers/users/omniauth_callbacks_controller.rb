@@ -4,25 +4,25 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
-  def facebook
-    callback_for(:facebook)
-  end
+  # def facebook
+  #   authorization
+  # end
   
   def google_oauth2
-    callback_for(:google)
+    authorization
   end
 
+  private
 
-  def callback_for(provider)
-    @omniauth = request.env['omniauth.auth']
-    info = User.find_oauth(@omniauth)
-    @user = info[:user]
-    if @user.persisted? 
+  def authorization
+    sns_info = User.from_omniauth(request.env["omniauth.auth"])
+    @user = sns_info[:user]
+
+    if @user.persisted?
       sign_in_and_redirect @user, event: :authentication
-      set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
-    else 
-      @sns = info[:sns]
-      render template: "devise/registrations/new" 
+    else
+      @sns_id = sns_info[:sns].id
+      render template: 'devise/registrations/new'
     end
   end
 

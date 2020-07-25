@@ -4,7 +4,9 @@
       %h2 Create Account
       %h5 新規アカウントの作成
       = render "devise/shared/links"
-      
+      -# .fa
+      -#   = icon("fab", "facebook-f", class: 'fa--icon')
+      -#   = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post,class: 'fa--link'
       .google
         = icon("fab", "google", class: 'google--icon')
         = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post,class: 'google--link'
